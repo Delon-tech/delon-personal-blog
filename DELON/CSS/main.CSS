@@ -1,0 +1,210 @@
+/* ========================================
+   MAIN CSS - Global Styles & Base Styles
+   ======================================== */
+
+/* Import other CSS files */
+@import url("components.css");
+@import url("layout.css");
+@import url("responsive.css");
+
+/* Animasi smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Transisi global */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Base body styling */
+body {
+  padding-top: 64px; /* Memberikan padding-top pada body untuk mengompensasi fixed navbar */
+}
+
+/* Hover effect untuk gambar */
+img {
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+/* Glow effect untuk tombol */
+.glow-on-hover:hover {
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+}
+
+/* Gradient overlay untuk gambar */
+.image-overlay {
+  position: relative;
+}
+
+.image-overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(30, 58, 138, 0.3),
+    rgba(239, 68, 68, 0.3)
+  );
+  border-radius: inherit;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #1e3a8a, #dc2626);
+  border-radius: 5px;
+}
+
+/* Utility Classes */
+.bg-gray-750 {
+  background-color: #2d374d;
+}
+
+.transition-all {
+  transition: all 0.3s ease-in-out;
+}
+
+.glass-effect {
+  background: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Text Gradient Overlay */
+.bg-gradient-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+/* Animations */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient-x {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 15s ease infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.fa-spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Loading animation */
+.loader {
+  border-top-color: #3b82f6;
+  border-bottom-color: #ef4444;
+}
+
+/* Notification styling */
+.notification {
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.notification.show {
+  transform: translateY(0);
+  opacity: 1;
+}

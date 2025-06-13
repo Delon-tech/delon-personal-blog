@@ -1,0 +1,374 @@
+/* ========================================
+   RESPONSIVE CSS - Media Queries
+   ======================================== */
+
+/* Tablet and Desktop */
+@media (min-width: 768px) {
+  /* Logo responsive adjustments */
+  .logo-image {
+    height: 3.75rem;
+  }
+
+  .brand-text {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-left: -4px;
+  }
+
+  .nav-link {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+  }
+
+  /* Experience slider adjustments */
+  .experience-slide h3 {
+    font-size: 1.75rem;
+  }
+
+  .nav-arrow {
+    padding: 0.75rem;
+  }
+
+  .dot {
+    width: 2rem;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  /* Hide carousel navigation on mobile */
+  .carousel-nav {
+    display: none;
+  }
+
+  /* Hide experience slider arrows on mobile */
+  .experience-slider .nav-arrow {
+    display: none;
+  }
+
+  /* Mobile navigation menu */
+  .nav-menu {
+    display: none;
+  }
+
+  .nav-menu.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Mobile experience slider adjustments */
+  .experience-slide h3 {
+    font-size: 1.5rem;
+  }
+
+  .nav-arrow {
+    padding: 0.5rem;
+  }
+
+  .dot {
+    width: 1.5rem;
+  }
+
+  /* Mobile logo adjustments */
+  .logo-image {
+    height: 3rem;
+  }
+
+  .brand-text {
+    font-size: 1.25rem;
+  }
+
+  /* Mobile form adjustments */
+  .contact-form {
+    padding: 1rem;
+  }
+
+  /* Mobile card adjustments */
+  .experience-item {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .company-logo {
+    width: 50px;
+    height: 50px;
+    margin-left: 15px;
+  }
+
+  .company-name {
+    font-size: 1.1rem;
+  }
+
+  .job-title {
+    font-size: 1rem;
+  }
+
+  /* Mobile project cards */
+  .project-card {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Mobile social icons */
+  .social-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  /* Mobile navigation adjustments */
+  .nav-container {
+    padding: 0 15px;
+  }
+
+  /* Mobile hero section */
+  #hero {
+    background-attachment: scroll; /* Fixed background doesn't work well on mobile */
+  }
+
+  /* Mobile typography adjustments */
+  .article-text {
+    padding: 0.75rem;
+  }
+
+  /* Mobile button adjustments */
+  .btn-login,
+  .btn-signup {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .auth-buttons {
+    gap: 8px;
+    margin-left: 15px;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1200px) {
+  /* Large desktop logo */
+  .logo-image {
+    height: 4rem;
+  }
+
+  .brand-text {
+    font-size: 2rem;
+  }
+
+  /* Large desktop navigation */
+  .nav-link {
+    font-size: 1.1rem;
+    padding: 0.75rem 0;
+  }
+
+  /* Large desktop experience cards */
+  .experience-item {
+    padding: 30px;
+  }
+
+  .company-logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* Large desktop project cards */
+  .project-card {
+    margin-bottom: 2rem;
+  }
+
+  /* Large desktop carousel */
+  .carousel-nav {
+    padding: 1.25rem;
+  }
+
+  .nav-arrow {
+    padding: 1.25rem;
+  }
+}
+
+/* Extra Large Desktop */
+@media (min-width: 1400px) {
+  .logo-image {
+    height: 4.5rem;
+  }
+
+  .brand-text {
+    font-size: 2.25rem;
+  }
+
+  .nav-link {
+    font-size: 1.2rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  /* Very small mobile adjustments */
+  .logo-image {
+    height: 2.5rem;
+  }
+
+  .brand-text {
+    font-size: 1rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .experience-item {
+    padding: 15px;
+  }
+
+  .company-logo {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+  }
+
+  .company-name {
+    font-size: 1rem;
+  }
+
+  .job-title {
+    font-size: 0.9rem;
+  }
+
+  .duration {
+    font-size: 0.8rem;
+  }
+
+  .social-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .btn-login,
+  .btn-signup {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+
+  .auth-buttons {
+    gap: 6px;
+    margin-left: 10px;
+  }
+
+  .article-text {
+    padding: 0.5rem;
+    line-height: 1.6;
+  }
+
+  .contact-form {
+    padding: 0.75rem;
+  }
+
+  /* Very small mobile carousel */
+  .dot {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .carousel-dots {
+    gap: 0.25rem;
+  }
+}
+
+/* Landscape Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  /* Landscape mobile specific styles */
+  .logo-image {
+    height: 2.75rem;
+  }
+
+  .brand-text {
+    font-size: 1.25rem;
+  }
+
+  /* Reduce padding in landscape mode */
+  .experience-item {
+    padding: 15px;
+  }
+
+  #hero {
+    min-height: 70vh; /* Reduce hero height in landscape */
+  }
+}
+
+/* Print Styles */
+@media print {
+  /* Hide interactive elements when printing */
+  .carousel-nav,
+  .nav-arrow,
+  .carousel-dots,
+  #mobile-menu-button,
+  .auth-buttons,
+  .social-icon {
+    display: none !important;
+  }
+
+  /* Ensure good contrast for printing */
+  .nav-link {
+    color: #000 !important;
+  }
+
+  .brand-text {
+    color: #000 !important;
+  }
+
+  /* Remove animations for print */
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Optimize layout for print */
+  body {
+    padding-top: 0 !important;
+  }
+
+  header {
+    position: static !important;
+    box-shadow: none !important;
+  }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Optimize for retina displays */
+  .logo-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+
+  .company-logo {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  /* Respect user's motion preferences */
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  .animate-gradient,
+  .animate-gradient-x,
+  .animate-float,
+  .fa-spinner {
+    animation: none !important;
+  }
+}
