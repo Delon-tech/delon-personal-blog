@@ -173,3 +173,88 @@ window.MainJS = {
     return spinner;
   },
 };
+
+// Inspirasi Section Functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const videoLinks = document.querySelectorAll("[data-video-id]");
+
+  videoLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const videoId = this.getAttribute("data-video-id");
+
+      // Buat modal untuk video YouTube dengan ukuran yang tetap
+      const modal = document.createElement("div");
+      modal.className =
+        "fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90";
+      modal.innerHTML = `
+        <div class="relative w-full max-w-4xl mx-4">
+          <button class="absolute -top-10 right-0 text-white hover:text-red-500 text-xl">
+            <i class="fas fa-times"></i> Tutup
+          </button>
+          <div class="relative" style="padding-bottom: 56.25%;">
+            <iframe 
+              class="absolute top-0 left-0 w-full h-full rounded-xl"
+              src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      `;
+
+      // Tambahkan modal ke body
+      document.body.appendChild(modal);
+
+      // Nonaktifkan scroll pada body
+      document.body.style.overflow = "hidden";
+
+      // Handle tutup modal
+      modal.querySelector("button").addEventListener("click", () => {
+        modal.remove();
+        document.body.style.overflow = "auto";
+      });
+
+      // Tutup modal saat klik di luar video
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.remove();
+          document.body.style.overflow = "auto";
+        }
+      });
+
+      // Tambahkan event listener untuk tombol ESC
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          modal.remove();
+          document.body.style.overflow = "auto";
+        }
+      });
+    });
+  });
+
+  // Slider Navigation
+  const prevBtn = document.getElementById("prevInspirasi");
+  const nextBtn = document.getElementById("nextInspirasi");
+  const slidesContainer = document.querySelector("#inspirasi .flex");
+  let currentSlide = 0;
+  const totalSlides = Math.ceil(
+    document.querySelectorAll("#inspirasi .group").length / 3
+  );
+
+  function updateSlidePosition() {
+    slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
+
+  prevBtn?.addEventListener("click", () => {
+    currentSlide = Math.max(currentSlide - 1, 0);
+    updateSlidePosition();
+  });
+
+  nextBtn?.addEventListener("click", () => {
+    currentSlide = Math.min(currentSlide + 1, totalSlides - 1);
+    updateSlidePosition();
+  });
+});
